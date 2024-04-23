@@ -7,8 +7,8 @@ export const getPodcastList = async () => {
 };
 
 
-export const getPodcastDetail = async () => { 
-  const id = 934552872
+export const getPodcastDetail = async (id: string) => { 
+  //const id = 934552872
   const response = await fetch(`https://itunes.apple.com/lookup?id=${id}&media=podcast&entity=podcastEpisode&limit=20`)
     .then((res) => res.json() as Promise<PodcastEpisode[]>);
   return response;

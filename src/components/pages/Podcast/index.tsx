@@ -4,7 +4,7 @@ import { usePodcastById } from '@/query/podcast';
 
 const Podcast = ({ podcastId }: { podcastId: string }) => {
   const podcastQuery = usePodcastById(podcastId);
-  console.log('::podcast::',podcastQuery.data);
+  //console.log('::podcast::',podcastQuery.data);
 
   return (
     <div>
