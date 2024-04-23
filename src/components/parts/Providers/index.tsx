@@ -13,7 +13,6 @@ const Providers = ({ children }: React.PropsWithChildren) => {
   return (
     <QueryClientProvider client={queryClient}>
       {children}
-
       <ReactQueryDevtools />
     </QueryClientProvider>
   );
