@@ -21,20 +21,22 @@ const Episode = ({podcastId, episodeId}: { podcastId: string, episodeId: string 
     const listPodcastInfo = entry?.find((podcast) => podcast.id.attributes['im:id'] === podcastId) || {summary: {label: ''}};
     const episodeInfo = results.find((episode) => episode.trackId === Number(episodeId));
     const podcastInfo = results[0];
-    console.log('::episodeInfo::',episodeInfo?.description);
     return (
       <>
       <Header loading={podcastQuery.isFetching}/>
-      <div className='flex flex-row'>
-        <PodcastDetailCard 
-        title={podcastInfo?.collectionName}
-        imageUrl={podcastInfo?.artworkUrl600} 
-        author={podcastInfo?.artistName} 
-        description={listPodcastInfo?.summary.label}
-        onClick={handleBack}
-        />
+      <div className='flex flex-row justify-between	'>
+        <div className='max-w-xs'>
+          <PodcastDetailCard 
+          title={podcastInfo?.collectionName}
+          imageUrl={podcastInfo?.artworkUrl600} 
+          author={podcastInfo?.artistName} 
+          description={listPodcastInfo?.summary.label}
+          onClick={handleBack}
+          />
+        </div>
+        
         <div>
-          <div className="episode-card">
+          <div className='max-w-3xl'>
             <h2 className="text-xl font-bold">{episodeInfo?.trackName}</h2>
             <p className="text-gray-500" dangerouslySetInnerHTML={{ __html: episodeInfo?.description ?? '' }}></p>
             <audio controls className="mt-4">

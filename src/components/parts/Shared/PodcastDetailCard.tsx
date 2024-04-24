@@ -11,7 +11,7 @@ interface PodcastDetailCardProps {
 
 const PodcastDetailCard: React.FC<PodcastDetailCardProps> = ({ imageUrl, title, author, description, onClick }) => {
   return (
-    <div className="bg-white rounded-lg shadow-lg p-4 max-w-1/5">
+    <div className="bg-white rounded-lg shadow-lg p-4 max-w-1/4">
       <div className="p-4">
       <Image 
         src={imageUrl} 

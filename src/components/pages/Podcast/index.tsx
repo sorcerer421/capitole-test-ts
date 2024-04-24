@@ -42,15 +42,17 @@ const Podcast = ({ podcastId }: { podcastId: string }) => {
     return (
       <>
         <Header loading={podcastQuery.isFetching}/>
-        <div className='flex flex-row'>
-          <PodcastDetailCard 
-            title={podcastInfo?.collectionName}
-            imageUrl={podcastInfo?.artworkUrl600} 
-            author={podcastInfo?.artistName} 
-            description={listPodcastInfo?.summary.label}
-            onClick={handleBack}
-          />
-          <div>
+        <div className='flex flex-row justify-between p-16'>
+          <div className='max-w-xs'>
+            <PodcastDetailCard 
+              title={podcastInfo?.collectionName}
+              imageUrl={podcastInfo?.artworkUrl600} 
+              author={podcastInfo?.artistName} 
+              description={listPodcastInfo?.summary.label}
+              onClick={handleBack}
+            />
+          </div>
+          <div className='max-w-3xl'>
             <h1>Episodes: {podcastInfo.trackCount}</h1>
             <div className='flex flex-wrap'>
               <table className='w-full'>
