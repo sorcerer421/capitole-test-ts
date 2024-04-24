@@ -1,9 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
 
 import { getPodcastDetail, getPodcastList } from '@/repositories/podcast';
+import { QueryFunction } from '@tanstack/react-query';
 
 export const getPodcastListKey = () => ['podcasts'];
-export const getPodcastDetailKey = (id: string) => ['podcast', id];
+export const getPodcastDetailKey = () => ['podcastInfo'];
 
 export const usePodcast = () => {
   const result = useQuery({
@@ -16,8 +17,8 @@ export const usePodcast = () => {
 
 export const usePodcastById = (id: string) => {
   const result = useQuery({
-    queryKey: getPodcastDetailKey(id),
-    queryFn: getPodcastList
+    queryKey: getPodcastDetailKey(),
+    queryFn: () => getPodcastDetail(id)
   });
 
   return result;

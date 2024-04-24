@@ -11,6 +11,7 @@ const Home = () => {
   const podcastQuery = usePodcast();
   const feed = podcastQuery.data?.feed;
   const entry = feed?.entry;
+  console.log('::entry::',entry);
   let actualList: Podcast[] = [];
   entry?.map((podcast: ReceivedPodcast) => {
     actualList.push({

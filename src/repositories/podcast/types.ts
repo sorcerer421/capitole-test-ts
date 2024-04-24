@@ -1,3 +1,5 @@
+import { title } from "process";
+
 export interface Podcast {
   id: string;
   title: string;
@@ -23,6 +25,20 @@ export interface ReceivedPodcast {
 }
 
 
-export interface PodcastEpisode {
+export interface ReceivedTrackDetails {
+  resultCount: number;
+  results: PodcastEpisode[];
+}
 
+export interface PodcastEpisode {
+  releaseDate: string;
+  trackTimeMillis: number;
+  trackName: string;
+  artistName: string;
+  collectionName: string;
+  trackCount: number;
+  artworkUrl600: string;
+  description: string;
+  trackId: number;
+  episodeUrl: string;
 }

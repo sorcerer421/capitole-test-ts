@@ -1,4 +1,4 @@
-import { Podcast, PodcastEpisode, ReceivedFeed } from "./types";
+import { Podcast, PodcastEpisode, ReceivedTrackDetails, ReceivedFeed } from "./types";
 
 export const getPodcastList = async () => {
   const response = await fetch('https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json')
@@ -7,9 +7,9 @@ export const getPodcastList = async () => {
 };
 
 
-export const getPodcastDetail = async (id: string) => { 
+export const getPodcastDetail = async (id?: string) => { 
   //const id = 934552872
   const response = await fetch(`https://itunes.apple.com/lookup?id=${id}&media=podcast&entity=podcastEpisode&limit=20`)
-    .then((res) => res.json() as Promise<PodcastEpisode[]>);
+    .then((res) => res.json() as Promise<ReceivedTrackDetails>);
   return response;
 };

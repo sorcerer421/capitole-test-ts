@@ -15,7 +15,7 @@ const EpisodeComponent = async ({params}:{
   const queryClient = getQueryClient();
 
   await queryClient.prefetchQuery({
-    queryKey: getPodcastDetailKey(slug),
+    queryKey: getPodcastDetailKey(),
     queryFn: () => getPodcastDetail(slug)
   });
 
