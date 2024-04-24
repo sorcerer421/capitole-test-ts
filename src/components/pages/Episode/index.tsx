@@ -24,7 +24,7 @@ const Episode = ({podcastId, episodeId}: { podcastId: string, episodeId: string 
     return (
       <>
       <Header loading={podcastQuery.isFetching}/>
-      <div className='flex flex-row justify-between	'>
+      <div className='flex flex-row justify-between	p-16'>
         <div className='max-w-xs'>
           <PodcastDetailCard 
           title={podcastInfo?.collectionName}
