@@ -16,6 +16,8 @@ const HomePage = async () => {
     queryFn: getPodcastList
   });
 
+  console.log('HomePage::', queryClient.isFetching());
+
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
       <Home />

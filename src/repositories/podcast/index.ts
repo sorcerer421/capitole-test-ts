@@ -1,8 +1,8 @@
-import { Podcast, PodcastEpisode } from "./types";
+import { Podcast, PodcastEpisode, ReceivedFeed } from "./types";
 
 export const getPodcastList = async () => {
   const response = await fetch('https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json')
-    .then((res) => res.json() as Promise<Podcast[]>);
+    .then((res) => res.json() as Promise<ReceivedFeed>);
   return response;
 };
 
