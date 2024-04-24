@@ -28,7 +28,7 @@ const Home = () => {
   return (
     <>
       <Header loading={podcastQuery.isFetching}/>
-      <div>
+      <div className='pl-48 bg-gray-200'>
         <div className='flex flex-wrap'>
         {actualList?.map((podcast) => <PodcastCard key={podcast.id} {...podcast} handleClick={handleClick}/>)}
         </div>

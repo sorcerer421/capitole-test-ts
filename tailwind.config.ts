@@ -8,6 +8,9 @@ const config: Config = {
     extend: {
       fontFamily: {
         inter: ['var(--font-inter)']
+      }, 
+      minWidth: {
+        '1/4': '20%',
       }
     }
   },
