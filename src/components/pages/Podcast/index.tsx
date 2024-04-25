@@ -38,6 +38,7 @@ const Podcast = ({ podcastId }: { podcastId: string }) => {
     const podcastInfo = results[0];
     const podcastEpisodesList = [...results];
     podcastEpisodesList.shift();
+    console.log(podcastInfo.artworkUrl600);
     
     return (
       <>

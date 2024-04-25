@@ -1,6 +1,6 @@
 const app = {
-  name: 'Web Name',
-  description: 'Description of web application',
+  name: 'Test INDITEX',
+  description: 'technical test for INDITEX',
   keywords: ['your', 'keywords']
 };
 
