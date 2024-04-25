@@ -3,14 +3,14 @@ import { cache } from 'react';
 import { QueryClient } from '@tanstack/react-query';
 
 const STALE_TIME = 1000 * 60 * 1; // 5 minutes
-//const CACHE_TIME = 1000 * 60 * 60 * 24; // 24 hours
+const CACHE_TIME = 1000 * 60 * 60 * 24; // 24 hours
 
 export const queryClientConfig = {
   defaultOptions: {
     queries: {
       refetchOnWindowFocus: false,
-      staleTime: 0,
-      //cacheTime: CACHE_TIME
+      staleTime: STALE_TIME,
+      cacheTime: CACHE_TIME
     },
     mutations: {
       onError: (error: Error) => {
