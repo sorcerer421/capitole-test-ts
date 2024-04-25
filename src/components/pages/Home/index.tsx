@@ -9,9 +9,8 @@ import { useRouter } from 'next/navigation';
 const Home = () => {
   const router = useRouter();
   const podcastQuery = usePodcast();
-  const feed = podcastQuery.data?.feed;
+  const feed: { entry?: ReceivedPodcast[] } = podcastQuery?.data?.feed || {};
   const entry = feed?.entry;
-  console.log('::entry::',entry);
   let actualList: Podcast[] = [];
   entry?.map((podcast: ReceivedPodcast) => {
     actualList.push({
